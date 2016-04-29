@@ -6,7 +6,9 @@
 <div class="container theme-showcase" role="main">
     
 <?php include( "views/container.phtml");?>
+<div>
 <?php include( "views/googlemap.phtml");?>
+</div>
 </div><!-- /container -->
 <?php include( "views/bootstrapjs.phtml");?>
 </body>
