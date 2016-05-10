@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `product_list` (
   `subcategory` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `imagepath` varchar(255) NOT NULL,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
