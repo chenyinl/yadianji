@@ -11,6 +11,7 @@
 <div>
     <h1>產品管理 <?php echo $category;?> -> <?php echo $subCategory;?></h1>
 </div>
+<?php include(__DIR__."/addNewProduct.phtml");?>
 <?php if( $results ===false):?>
 此項目現在沒有產品
 <?php else:?>
@@ -34,7 +35,7 @@
   </div>
 </div>-->
 
-<?php include(__DIR__."/addNewProduct.phtml");?>
+
 <?php foreach ($results AS $r):?>
 
 <div class="row athen-solid-border athen-solid-border">
