@@ -2,3 +2,22 @@
 body {
   background-image: url('/images/background.jpg') !important;
 }
+
+.price{
+    color: green;
+}
+.carousel-caption-athen{
+    /*background-color:rgba(75,0,130,0.3);  purple */
+    background-color:rgba(0,0,0,0.3); /* black */
+    max-width: 300px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.athen-round-image{
+    border-radius: 25px;
+}
+
+.athen-subcategory{
+    color: rgb(75,0,130);
+}

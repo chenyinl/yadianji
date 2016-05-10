@@ -21,7 +21,13 @@
 <?php $n=0;?>
 <?php foreach($items AS $item):?>
     <div class="item<?php if ($n==0) {echo ' active'; $n++;}?>" >
-      <img src="productImage/<?php echo $item["imgurl"]?>" alt="">
+      <img class="athen-round-image" src="/productImage/<?php echo $item["imagepath"]?>" alt="">
+      <!-- Product Description Panel-->
+        <div class="carousel-caption carousel-caption-athen">
+          <h3><?php echo $item["title"];?> <span class="price">$<?php echo $item["price"];?></span></h3>
+          <?php echo $item["description"];?>
+        </div>
+      <!-- End of Product Panel -->
     </div>
 <?php endforeach;?>
   </div>

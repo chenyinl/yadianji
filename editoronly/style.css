@@ -1,0 +1,13 @@
+
+body {
+  //background-image: url('/images/background.jpg') !important;
+}
+
+.athen-product-img-edit{
+    max-width: 200px;     
+}
+
+.athen-solid-border {
+    border-style: solid;
+    border-width: 1px;
+}
