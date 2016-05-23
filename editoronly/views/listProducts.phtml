@@ -11,7 +11,21 @@
 <div>
     <h1>產品管理 <?php echo $category;?> -> <?php echo $subCategory;?></h1>
 </div>
-<?php include(__DIR__."/addNewProduct.phtml");?>
+<div class="well">
+<?php
+$data=array(
+    "title" => "",
+    "description" => "",
+    "imagePath" => "",
+    "price" => "",
+    "category"=>$_GET["cat"],
+    "subcategory"=> $_GET["subCat"]
+);
+$buttonName="新增產品";
+$action = "new";
+$id = "";
+?>
+<?php include(__DIR__."/oneProductForm.phtml");?>
 <?php if( $results ===false):?>
 此項目現在沒有產品
 <?php else:?>
@@ -42,7 +56,7 @@
   <button 
     type="button" 
     class="btn btn-sm btn-primary"
-    onclick="alert('edit');"
+    onclick="editProduct('<?php echo $r["id"]?>');"
  >編輯</button>  
   <button 
     type="button" 

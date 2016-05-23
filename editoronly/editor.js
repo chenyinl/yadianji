@@ -19,3 +19,7 @@ function deleteProduct( id ){
     }
     http.send(params);
 }
+
+function editProduct( id ){
+    window.location.href="/editoronly/editProduct.php?id="+id;
+}

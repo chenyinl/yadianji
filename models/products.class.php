@@ -31,6 +31,30 @@ class products
         }
     }
     
+    public function updateProduct( $data ){
+        
+        if( $data["imagepath"] ){
+            $imagesql = "imagepath='".$data["imagepath"]."',";
+        }else{
+            $imagesql = "";
+        }
+        $sql = "UPDATE product_list
+        SET title='".$data["title"]."',
+            description='".$data["description"]."',
+            ".$imagesql."
+            price='".$data["price"]."'
+
+        WHERE 
+            id='".$data['id']."';";
+        if( $this->db->query( $sql) ===TRUE){
+            $this->message = "更新成功";
+            return true;
+        }else{
+            $this->errorMessage = $this->db->error;
+            return false;
+        }
+    }
+    
     public function deleteProductById( $id ){
         $sql = "DELETE FROM product_list
         WHERE id=".$id;
@@ -44,6 +68,20 @@ class products
         }
     }
     
+    public function getProductById( $id ){
+        $sql = "SELECT * FROM product_list WHERE id=".$id;
+        if (!$result = $this->db->query($sql)) {
+            $this->errorMessage = $this->db->error;
+            return false;
+        }
+        
+        if( $result->num_rows === 0 ){
+            $this->errorMessage = "No product found";
+            return false;
+        }
+        $row = $result->fetch_assoc();
+        return $row;
+    }
     public function getProductsByCat( $category, $subCategory){
         
         $mysqli = new mysqli(DB_ADDR, DB_USER, DB_PW, DB_NAME);

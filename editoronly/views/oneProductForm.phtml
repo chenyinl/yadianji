@@ -1,0 +1,28 @@
+<form method="POST" action="saveProducts.php" enctype="multipart/form-data">
+    
+    <input type="hidden" name="cat" value = "<?php echo $categoryId;?>">
+    <input type="hidden" name="id" value="<?php echo $id;?>">
+    <input type="hidden" name="subCat" value="<?php echo $subCategoryId;?>">
+    <input type="hidden" name="action" value="<?php echo $action;?>">
+<div class="row  athen-solid-border">
+<button type="submit" class="btn-btn-sm btn-info"><?php echo $buttonName;?></button>  
+<div class="col-md-3 ">
+    <?php if (isset( $data['imagepath'])):?>
+    <img class="athen-product-img-edit" src="/productImage/<?php echo $data["imagepath"];?>">
+    <?php endif;?>
+    照片 <input type="file" name="image"></input>
+  </div>
+  <div class="col-md-2">
+    產品名稱<br/>
+    <input type="text" name="title" value = "<?php echo $data['title'];?>"></input>
+  </div>
+  <div class="col-md-4">
+    產品敘述<br/>
+    <input type="text" name="description" value="<?php echo $data['description'];?>"></input>
+  </div>
+  <div class="col-md-1">
+    價錢<br/>
+    $ <input type="text" name="price" value="<?php echo $data['price'];?>"></input>
+  </div>
+</div>
+</form>
