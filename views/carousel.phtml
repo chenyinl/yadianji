@@ -24,7 +24,11 @@
       <img class="athen-round-image" src="/productImage/<?php echo $item["imagepath"]?>" alt="">
       <!-- Product Description Panel-->
         <div class="carousel-caption carousel-caption-athen">
-          <h3><?php echo $item["title"];?> <span class="price">$<?php echo $item["price"];?></span></h3>
+          <h3><?php echo $item["title"];?> 
+          <?php if ($item["price"]):?>
+          <span class="price">$<?php echo $item["price"];?></span>
+          <?php endif;?>
+          </h3>
           <?php echo $item["description"];?>
         </div>
       <!-- End of Product Panel -->
