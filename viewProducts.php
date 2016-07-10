@@ -15,7 +15,7 @@ $items = $obj -> getProductsByCat($categoryId, $subCategoryId);
 <body role="document">
 <?php include( "views/navbar.phtml");?>
 <div class="container theme-showcase" role="main">
-<h1><b>[測試中]</b><?php echo $category;?>  
+<h1><b></b><?php echo $category;?>  
     <span class="athen-subcategory"><?php echo $subCategory;?></span></h1>
 <?php if( !$items):?>
 抱歉，目前沒有產品
