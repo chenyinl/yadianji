@@ -2,3 +2,5 @@ productImage/
 config/database.php
 products/data
 products/uploaded_images/
+products/thumbnails/
+proudcts/data/listings.xml
