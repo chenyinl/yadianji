@@ -1,2 +1,4 @@
 productImage/
 config/database.php
+products/data
+products/uploaded_images/

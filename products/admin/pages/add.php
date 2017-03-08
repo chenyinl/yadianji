@@ -40,6 +40,8 @@ if(!defined('IN_SCRIPT')) die("");
 				$listing->addChild('title', stripslashes($_POST["title"]));
 				$listing->addChild('description', stripslashes($_POST["description"]));
 				$listing->addChild('price', stripslashes($_POST["price"]));
+                $listing->addChild('cost', stripslashes($_POST["cost"]));
+                $listing->addChild('brand', stripslashes($_POST["brand"]));
 				$listing->addChild('images', $str_images_list);
 				
 				$listings->asXML($this->data_file); 
@@ -83,6 +85,16 @@ if(!defined('IN_SCRIPT')) die("");
 									<label><?php echo $this->texts["description"];?>:</label>
 									
 									<textarea name="description" cols="40" rows="10"></textarea>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["cost"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
+									
+									<input type="text" name="cost" value="<?php echo $xml->listing[$id]->cost;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["brand"];?>:</label>
+									
+									<input type="text" name="brand" value="<?php echo $xml->listing[$id]->brand;?>"/>
 								</li>
 								<li>
 									<label><?php echo $this->texts["price"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
