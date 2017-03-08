@@ -33,6 +33,7 @@ else
 		
 		setcookie("AuthUser",$strCookie, (time()+LOGIN_EXPIRE_AFTER));
         setcookie("AuthUser",$strCookie, (time()+LOGIN_EXPIRE_AFTER), '/products');
+        setcookie("AuthUser",$strCookie, (time()+LOGIN_EXPIRE_AFTER), '/');
 
 		die("<script>document.location.href='".SUCCESS_PAGE."';</script>");
 	}

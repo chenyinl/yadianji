@@ -1,11 +1,4 @@
 <?php
-// ATN Product Lister
-// http://www.atnsolutions.com/product-lister
-// Copyright (c) All Rights Reserved ATN Solutions
-// Find out more about our products and services on:
-// http://www.atnsolutions.com
-// Released under the MIT license
-?><?php
 if(!defined('IN_LOGIN_SCRIPT')) die("");
 
 ?>
@@ -56,61 +49,6 @@ if(!defined('IN_LOGIN_SCRIPT')) die("");
 		</div>
 		
 		<div class="col-md-5">
-		<!--news slider-->
-		<br/>
-		
-			<div class="slideshow-wrap">
-			
-				<div id="slideshow">
-				
-				<?php
-					$xml = $this->load_login_slides();
-				
-					foreach($xml->slide as $slide)
-					{
-						?>
-						<div>
-							<?php echo $slide->content;?>
-						</div>
-						<?php
-					}
-					foreach($xml->slide as $slide)
-					{
-						?>
-						<div>
-							<?php echo $slide->content;?>
-						</div>
-						<?php
-					}
-				?>
-				   <div>
-					
-				   </div>
-				   
-				   <div class="clearfix"></div>
-				</div>
-			</div>
-			
-			<script>
-			
-		$(document).ready(function() {
-
-					$("#slideshow > div:gt(0)").hide();
-
-					setInterval(function() {
-					  $('#slideshow > div:first')
-						.fadeOut(1000)
-						.next()
-						.fadeIn(1000)
-						.end()
-						.appendTo('#slideshow');
-					},  10000);
-
-				});
-			</script>
-		
-		
-		<!--end news slider-->
 		</div>
 	</div>
 	<br/>
