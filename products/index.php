@@ -1,5 +1,6 @@
 <?php
-include("check_user.php");
+// set password or not
+// include("check_user.php");
 define("IN_SCRIPT","1");
 error_reporting(0);
 session_start();

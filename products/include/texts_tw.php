@@ -1,3 +1,4 @@
+sku = "貨號"
 id = "貨號"
 no_results = "No products were found."
 advertisements = "Advertisements"

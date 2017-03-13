@@ -59,6 +59,7 @@ $(function(){
                 $xml->listing[$id]->cost=stripslashes($_POST["cost"]);
 				$xml->listing[$id]->price=stripslashes($_POST["price"]);
 				$xml->listing[$id]->brand=stripslashes($_POST["brand"]);
+                $xml->listing[$id]->sku=stripslashes($_POST["sku"]);
 				$xml->asXML($this->data_file); 
 				echo "<h3>".$this->texts["modifications_saved"]."</h3><br/>";
 			}	
@@ -91,6 +92,11 @@ $(function(){
 									<label><?php echo $this->texts["description"];?>:</label>
 									
 									<textarea name="description" cols="40" rows="10"><?php echo $xml->listing[$id]->description;?></textarea>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["sku"];?>:</label>
+									
+									<input type="text" name="sku" value="<?php echo $xml->listing[$id]->sku;?>"/>
 								</li>
                                 <li>
 									<label><?php echo $this->texts["cost"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>

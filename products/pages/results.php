@@ -174,7 +174,7 @@ if(!defined('IN_SCRIPT')) die("");
 								}
 								?>
                                 <br/>
-								<span class="listing-price"><?php echo $this->texts["id"];?>: <strong><?php echo $listing_counter;?></strong></span>
+								<span class="listing-price"><?php echo $this->texts["sku"];?>: <strong><?php echo $listing->sku;?></strong></span>
                                 <span class="is_r_featured"></span>
 							</div>
 						</div>

@@ -68,7 +68,7 @@ $this->MetaDescription($listings->listing[$id]->description);
 		}
 		?>
         <br/>
-	    <?php echo $this->texts["id"];?>: <strong><?php echo $id;?></strong>
+	    <?php echo $this->texts["sku"];?>: <strong><?php echo $listings->listing[$id]->sku;?></strong>
 	
 	</div>
 	<?php
