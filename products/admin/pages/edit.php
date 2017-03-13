@@ -16,7 +16,10 @@ $this->ms_i($id);
 	<div class="header-line">
 		  <div class="container">
 		  
-			<a href="index.php" style="margin-top:17px" class="btn btn-default pull-right">Go Back</a>
+			<a href="index.php" style="margin-top:17px" class="btn btn-default pull-right">
+                <?php echo $this->texts["go_back"];?> 
+                <?php echo $this->texts["manage_listings"];?>
+            </a>
 			
 			<h3><?php echo $this->texts["edit_listing"];?></h3>
 		  </div>
@@ -58,8 +61,11 @@ $(function(){
 				$xml->listing[$id]->title=stripslashes($_POST["title"]);
                 $xml->listing[$id]->cost=stripslashes($_POST["cost"]);
 				$xml->listing[$id]->price=stripslashes($_POST["price"]);
+                $xml->listing[$id]->retailprice=stripslashes($_POST["retailprice"]);
 				$xml->listing[$id]->brand=stripslashes($_POST["brand"]);
                 $xml->listing[$id]->sku=stripslashes($_POST["sku"]);
+                $xml->listing[$id]->quantity=stripslashes($_POST["quantity"]);
+                $xml->listing[$id]->remarks=stripslashes($_POST["remarks"]);
 				$xml->asXML($this->data_file); 
 				echo "<h3>".$this->texts["modifications_saved"]."</h3><br/>";
 			}	
@@ -91,7 +97,7 @@ $(function(){
 								<li>
 									<label><?php echo $this->texts["description"];?>:</label>
 									
-									<textarea name="description" cols="40" rows="10"><?php echo $xml->listing[$id]->description;?></textarea>
+									<textarea name="description" cols="40" rows="5"><?php echo $xml->listing[$id]->description;?></textarea>
 								</li>
                                 <li>
 									<label><?php echo $this->texts["sku"];?>:</label>
@@ -99,19 +105,34 @@ $(function(){
 									<input type="text" name="sku" value="<?php echo $xml->listing[$id]->sku;?>"/>
 								</li>
                                 <li>
-									<label><?php echo $this->texts["cost"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
-									
-									<input type="text" name="cost" value="<?php echo $xml->listing[$id]->cost;?>"/>
-								</li>
-                                <li>
 									<label><?php echo $this->texts["brand"];?>:</label>
 									
 									<input type="text" name="brand" value="<?php echo $xml->listing[$id]->brand;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["retailprice"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
+									
+									<input type="text" name="retailprice" value="<?php echo $xml->listing[$id]->retailprice;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["cost"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
+									
+									<input type="text" name="cost" value="<?php echo $xml->listing[$id]->cost;?>"/>
 								</li>
 								<li>
 									<label><?php echo $this->texts["price"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
 									
 									<input type="text" name="price" value="<?php echo $xml->listing[$id]->price;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["quantity"];?>:</label>
+									
+									<input type="text" name="quantity" value="<?php echo $xml->listing[$id]->quantity;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["remarks"];?>:</label>
+									
+									<input type="text" name="remarks" value="<?php echo $xml->listing[$id]->remarks;?>"/>
 								</li>
 							<ol>
 						</fieldset>

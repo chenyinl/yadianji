@@ -115,12 +115,14 @@ function ValidateSubmit(form)
 			<tr>
 			
 			  <th width="60"><?php echo $this->texts["edit"];?></th>
-			  <th width="140"><?php echo $this->texts["images"];?></th>
+			  <th width="180"><?php echo $this->texts["images"];?></th>
 			  <th width="180"><?php echo $this->texts["title"];?></th>
-              <th width="80"><?php echo $this->texts["sku"];?></th>
+              <th width="60"><?php echo $this->texts["sku"];?></th>
 			  <th><?php echo $this->texts["description"];?></th>
-			  <th width="80"><?php echo $this->texts["price"];?></th>
-			  <th width="80"><?php echo $this->texts["delete"];?></th>
+              <th width="60"><?php echo $this->texts["retailprice"];?></th>
+			  <th width="60"><?php echo $this->texts["price"];?></th>
+              <th width="60"><?php echo $this->texts["quantity"];?></th>
+			  <th width="60"><?php echo $this->texts["delete"];?></th>
 			</tr>
 		  </thead>
       <tbody>
@@ -158,7 +160,9 @@ function ValidateSubmit(form)
 				<td><?php echo $listing->title;?></td>
                 <td><?php echo $listing->sku;?></td>
 				<td><?php echo $this->text_words($listing->description,60);?></td>
+                <td><?php echo $this->settings["website"]["currency"].$listing->retailprice;?></td>
 				<td><?php echo $this->settings["website"]["currency"].$listing->price;?></td>
+                <td><?php echo $listing->quantity;?></td>
 				<td><input type="checkbox" value="<?php echo $i;?>" name="delete_listings[]"/></td>
 				
 			</tr>

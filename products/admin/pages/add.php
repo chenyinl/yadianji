@@ -10,7 +10,10 @@ if(!defined('IN_SCRIPT')) die("");
 	<div class="header-line">
 		  <div class="container">
 		  
-			<a href="index.php" style="margin-top:17px" class="btn btn-default pull-right"><?php echo $this->texts["go_back"];?></a>
+			<a href="index.php" style="margin-top:17px" class="btn btn-default pull-right">
+                <?php echo $this->texts["go_back"];?>
+                <?php echo $this->texts["manage_listings"];?>
+            </a>
 			
 			<h3><?php echo $this->texts["add_new_listing"];?></h3>
 		  </div>
@@ -41,8 +44,11 @@ if(!defined('IN_SCRIPT')) die("");
 				$listing->addChild('description', stripslashes($_POST["description"]));
 				$listing->addChild('price', stripslashes($_POST["price"]));
                 $listing->addChild('cost', stripslashes($_POST["cost"]));
+                $listing->addChild('quantity', stripslashes($_POST["quantity"]));
+                $listing->addChild('retailprice', stripslashes($_POST["retailprice"]));
                 $listing->addChild('brand', stripslashes($_POST["brand"]));
                 $listing->addChild('sku', stripslashes($_POST["sku"]));
+                $listing->addChild('remarks', stripslashes($_POST["remarks"]));
 				$listing->addChild('images', $str_images_list);
 				
 				$listings->asXML($this->data_file); 
@@ -85,7 +91,7 @@ if(!defined('IN_SCRIPT')) die("");
 								<li>
 									<label><?php echo $this->texts["description"];?>:</label>
 									
-									<textarea name="description" cols="40" rows="10"></textarea>
+									<textarea name="description" cols="40" rows="5"></textarea>
 								</li>
                                 <li>
 									<label><?php echo $this->texts["sku"];?>:</label>
@@ -93,19 +99,34 @@ if(!defined('IN_SCRIPT')) die("");
 									<input type="text" name="sku" value="<?php echo $xml->listing[$id]->sku;?>"/>
 								</li>
                                 <li>
-									<label><?php echo $this->texts["cost"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
-									
-									<input type="text" name="cost" value="<?php echo $xml->listing[$id]->cost;?>"/>
-								</li>
-                                <li>
 									<label><?php echo $this->texts["brand"];?>:</label>
 									
 									<input type="text" name="brand" value="<?php echo $xml->listing[$id]->brand;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["retailprice"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
+									
+									<input type="text" name="retailprice" value="<?php echo $xml->listing[$id]->retailprice;?>"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["cost"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
+									
+									<input type="text" name="cost" value="<?php echo $xml->listing[$id]->cost;?>"/>
 								</li>
 								<li>
 									<label><?php echo $this->texts["price"];?> (<?php echo $this->settings["website"]["currency"];?>):</label>
 									
 									<input type="text" name="price" value=""/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["quantity"];?>:</label>
+									
+									<input type="text" name="quantity" value="1"/>
+								</li>
+                                <li>
+									<label><?php echo $this->texts["remarks"];?>:</label>
+									
+									<input type="text" name="remarks" value=""/>
 								</li>
 							<ol>
 						</fieldset>

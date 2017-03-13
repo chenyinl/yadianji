@@ -69,6 +69,10 @@ $this->MetaDescription($listings->listing[$id]->description);
 		?>
         <br/>
 	    <?php echo $this->texts["sku"];?>: <strong><?php echo $listings->listing[$id]->sku;?></strong>
+        <br/>
+	    <?php echo $this->texts["retailprice"];?>: <strong><?php echo $listings->listing[$id]->retailprice;?></strong>
+        <br/>
+	    <?php echo $this->texts["quantity"];?>: <strong><?php echo $listings->listing[$id]->quantity;?></strong>
 	
 	</div>
 	<?php
