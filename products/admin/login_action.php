@@ -6,7 +6,7 @@
 ?><?php
 define("LOGIN_PAGE", "login.php");
 define("SUCCESS_PAGE", "index.php");
-define("LOGIN_EXPIRE_AFTER", 3 * 3600);
+define("LOGIN_EXPIRE_AFTER", 3 * 360000);
 
 if(!isset($_POST["username"]) || !isset($_POST["password"]) || trim($_POST["username"]) == "" || trim($_POST["password"]) == "") 
 {
