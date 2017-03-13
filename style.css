@@ -21,3 +21,12 @@ body {
 .athen-subcategory{
     color: rgb(75,0,130);
 }
+
+/* product page CSS */
+.whitewall{
+   background-color: #FFF
+}
+
+#searchblock{
+    padding-right: 22px;
+}
