@@ -120,6 +120,7 @@ function ValidateSubmit(form)
               <th width="60"><?php echo $this->texts["sku"];?></th>
 			  <th><?php echo $this->texts["description"];?></th>
               <th width="60"><?php echo $this->texts["retailprice"];?></th>
+              <th width="60"><?php echo $this->texts["cost"];?></th>
 			  <th width="60"><?php echo $this->texts["price"];?></th>
               <th width="60"><?php echo $this->texts["quantity"];?></th>
 			  <th width="60"><?php echo $this->texts["delete"];?></th>
@@ -161,6 +162,7 @@ function ValidateSubmit(form)
                 <td><?php echo $listing->sku;?></td>
 				<td><?php echo $this->text_words($listing->description,60);?></td>
                 <td><?php echo $this->settings["website"]["currency"].$listing->retailprice;?></td>
+                <td><?php echo $this->settings["website"]["currency"].$listing->cost;?></td>
 				<td><?php echo $this->settings["website"]["currency"].$listing->price;?></td>
                 <td><?php echo $listing->quantity;?></td>
 				<td><input type="checkbox" value="<?php echo $i;?>" name="delete_listings[]"/></td>
