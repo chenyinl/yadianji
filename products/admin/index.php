@@ -7,10 +7,10 @@
 ?><?php
 include("check_user.php");
 define("IN_SCRIPT","1");
-
-error_reporting(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
-
+ 
 include("../include/SiteManager.class.php");
 
 $website = new SiteManager();
